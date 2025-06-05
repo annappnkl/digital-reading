@@ -7,7 +7,7 @@ interface LogParams {
   word: string;
   word_index_original: number;
   word_index_displayed: number;
-  action: 'click_only' | 'synonym' | 'explanation' | 'undo' | 'retry' | 'explain_after_replace';
+  action: 'click_only' | 'synonym' | 'explanation' | 'translation' | 'undo' | 'retry' | 'explain_after_replace';
   original_sentence: string;
   label: string;
   result_summary: string;

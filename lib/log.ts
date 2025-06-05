@@ -1,6 +1,6 @@
 import { supabase } from './supabaseClient';
 
-interface LogParams {
+export interface LogParams {
   session_id?: string;
   user_id?: string;
   condition: string;

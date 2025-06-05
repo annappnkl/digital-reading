@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { logWordClick } from '../lib/log';
 import { useRouter } from 'next/router';
 import { getTextForCEFRLevel } from '../lib/getTextForCEFRLevel';
+import { LogParams } from '../lib/log';
 
 export default function Home() {
   const router = useRouter();
@@ -366,7 +367,7 @@ export default function Home() {
       word,
       word_index_original,
       word_index_displayed: clicked_word_index,
-      action,
+      action: action as LogParams['action'],
       original_sentence: sentence,
       label,
       result_summary,

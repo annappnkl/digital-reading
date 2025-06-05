@@ -433,7 +433,7 @@ export default function Home() {
                 i === clicked_word_index ? 'bg-yellow-200' : ''
               } ${replacedWordIndices.includes(i) ? 'text-blue-800 italic' : 'text-black'}`}
               onClick={() => handleWordClick(i, word)}
-              ref={el => (wordRefs.current[i] = el)}
+              ref={el => void (wordRefs.current[i] = el)}
             >
               {/* 🟦 Show translation as blue label if it exists */}
               {translatedLabels[i] && (

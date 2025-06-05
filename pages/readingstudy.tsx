@@ -92,7 +92,7 @@ export default function Home() {
       synonym: "If you do not understand a word -- click it -- it will be replaced with a simpler synonym or expression.",
       explanation: "If you do not understand a word -- click it -- it will be explained to you.",
       translation: "If you do not understand a word -- click it -- it will be translated to your native language.",
-      click_only: "If you do not understand a word -- click it -- it will be highlighted, if you want to, you can use a dictionary on a separate tab to look it up. I have opened a dictionary for you there.",
+      click_only: "If you do not understand a word -- click it -- it will be highlighted, if you want to, you can use a dictionary on a separate tab.",
     };
   
     return (

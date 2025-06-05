@@ -27,22 +27,6 @@ export default function PostSurvey() {
   };
 
   const handleSubmit = async () => {
-    const requiredFields = [
-      'final_understanding',
-      'final_difficulty',
-      'final_confidence',
-      'favorite_condition',
-      'least_helpful',
-      'frustration',
-      'intervention_order_agreement'
-    ];
-  
-    const missing = requiredFields.some(field => !formData[field as keyof typeof formData]);
-  
-    if (missing) {
-      alert('Please fill in all info before proceeding');
-      return;
-    }
   
     localStorage.setItem('postSurveyData', JSON.stringify(formData));
     const session_id = localStorage.getItem('session_id');

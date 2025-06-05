@@ -37,7 +37,7 @@ async function getCompletion(prompt: string) {
       temperature: 0.7,
       max_tokens: 200,
     });
-  } catch (error) {
+  } catch {
     console.warn('Falling back to GPT-3.5 for continuation.');
     return await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',

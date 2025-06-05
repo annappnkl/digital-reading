@@ -51,23 +51,7 @@ export default function ConditionFeedback() {
   };
 
   const handleSubmit = async () => {
-    const requiredFields = [
-      'helpfulness',
-      'stress',
-      'comprehension',
-      'difficulty',
-      'confidence',
-      'usefulness'
-    ];
-  
-    const anyMissingForm = requiredFields.some(field => !formData[field as keyof typeof formData]);
-    const anyMissingAnswers = answers.some(answer => answer.trim() === '');
-  
-    if (anyMissingForm || anyMissingAnswers) {
-      alert('Please fill in all info before proceeding');
-      return;
-    }
-  
+    
     const session_id = localStorage.getItem('session_id');
     const user_id = localStorage.getItem('user_id');
   

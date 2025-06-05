@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const result = await getChatCompletion(prompt);
     res.status(200).json({ definition: result });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Define API error:', err);
     res.status(500).json({ error: 'Definition failed' });
   }

@@ -33,7 +33,6 @@ export default function PreSurvey() {
   };
 
   const nextStep = () => setStep(step + 1);
-  const prevStep = () => setStep(step - 1);
 
  const handleSubmit = async () => {
   const requiredFields = [
@@ -236,7 +235,7 @@ export default function PreSurvey() {
             <option value="5">More than 2 hours at a time</option>
           </select>
 
-          <label className="block p-2 mb-1 font-semibold">When you don't understand a word you are reading what do you do?</label>
+          <label className="block p-2 mb-1 font-semibold">When you don&apos;t understand a word you are reading what do you do?</label>
           <select name="understanding_method" value={formData.understanding_method} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
             <option value="">Select</option>
             <option value="infer">I try to understand through context</option>

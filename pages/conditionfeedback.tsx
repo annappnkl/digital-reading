@@ -149,7 +149,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
         </select>
 
-        <label className="block p-2 mb-1 font-semibold">If it wasn't for the method, I would not have understood the text.</label>
+        <label className="block p-2 mb-1 font-semibold">If it wasn&apos;t for the method, I would not have understood the text.</label>
         <select name="usefulness" value={formData.usefulness} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>

@@ -37,8 +37,13 @@ Use a clear, simple, and common translation. Only return the translated word.`;
   try {
     const translated = await getChatCompletion(prompt);
     res.status(200).json({ translated });
-  } catch (error: any) {
-    console.error('Translation failed:', error.message);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error('Translation failed:', error.message);
+    } else {
+      console.error('Translation failed:', error);
+    }
     res.status(500).json({ error: 'Translation failed' });
   }
+  
 }

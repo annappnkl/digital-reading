@@ -12,7 +12,7 @@ Return only a simpler synonym that fits in place. If it is already simple or ina
   try {
     const result = await getChatCompletion(prompt);
     res.status(200).json({ replacement: result });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Simplify API error:', err);
     res.status(500).json({ error: 'Simplification failed' });
   }

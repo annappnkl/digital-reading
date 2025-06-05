@@ -6,7 +6,7 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { word, sentence } = req.body;
 
-  const prompt = `In the sentence: \"${sentence}\", is the word \"${word}\" a person's name, a location, or neither? Reply with one word: person, location, or neither.`;
+  const prompt = `In the sentence: \"${sentence}\", is the word \"${word}\" a persons name, a location, or neither? Reply with one word: person, location, or neither.`;
 
   try {
     const result = await getChatCompletion(prompt, 0);

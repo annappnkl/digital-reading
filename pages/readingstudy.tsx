@@ -19,9 +19,9 @@ export default function Home() {
   const [replacedWordIndices, setReplacedWordIndices] = useState<number[]>([]);
   const [session_id, setSession_id] = useState<string | null>(null);
   const [user_id, setUserId] = useState<string | null>(null);
-  const [showFinalSecondsMessage, setShowFinalSecondsMessage] = useState(false);
+  const [showFinalSecondsMessage] = useState(false);
   const [interventionOrder, setInterventionOrder] = useState<string[]>([]);
-  const [currentStep, setCurrentStep] = useState(() => {
+  const [currentStep] = useState(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('currentStep');
       return stored ? parseInt(stored, 10) : 0;
@@ -38,7 +38,7 @@ export default function Home() {
     const words = story.split(' ');
     setDisplayedWords(words);
     setOriginalWords(words);
-  }, []);  
+  }, [currentStep]);
 
   useEffect(() => {
     const storedOrder = localStorage.getItem('interventionOrder');
@@ -88,10 +88,10 @@ export default function Home() {
   
   if (showInstructions) {
     const instructionText: Record<string, string> = {
-      synonym: "If you don't understand a word -- click it -- it will be replaced with a simpler synonym or expression.",
-      explanation: "If you don't understand a word -- click it -- it will be explained to you.",
-      translation: "If you don't understand a word -- click it -- it will be translated to your native language.",
-      click_only: "If you don't understand a word -- click it -- it will be highlighted, if you want to, you can use a dictionary on a separate tab to look it up. I have opened a dictionary for you there.",
+      synonym: "If you do not understand a word -- click it -- it will be replaced with a simpler synonym or expression.",
+      explanation: "If you do not understand a word -- click it -- it will be explained to you.",
+      translation: "If you do not understand a word -- click it -- it will be translated to your native language.",
+      click_only: "If you do not understand a word -- click it -- it will be highlighted, if you want to, you can use a dictionary on a separate tab to look it up. I have opened a dictionary for you there.",
     };
   
     return (
@@ -121,7 +121,6 @@ export default function Home() {
 
   
   const sentence = text;
-  const words = sentence.split(' ');
   
   const handleWordClick = async (index: number, word: string) => {
   
@@ -177,7 +176,7 @@ export default function Home() {
     let result_summary = '';
     let replacement: string | null = null;
     let explanation: string | null = null;
-    let generated_text: string | null = null;
+    const generated_text: string | null = null;
   
     if (currentIntervention !== 'translation') {
       const classifyRes = await fetchJSON('/api/classify', { word, sentence });
@@ -216,7 +215,7 @@ export default function Home() {
   
       if (label === 'person') {
         result_summary = `Unreplaceable (${label})`;
-        showToast(`"${word}" is a person's name. Try "E".`);
+        showToast(`"${word}" is a name.`);
         logWordClick({
           session_id: session_id ?? undefined,
           user_id: user_id ?? undefined,
@@ -240,7 +239,7 @@ export default function Home() {
       
         if (!isGeneric && isProperNoun) {
           result_summary = `Unreplaceable (named location)`;
-          showToast(`"${word}" is a location. Try "E".`);
+          showToast(`"${word}" is a location.`);
           logWordClick({
             session_id: session_id ?? undefined,
             user_id: user_id ?? undefined,
@@ -380,7 +379,7 @@ export default function Home() {
   };
   
 
-  const fetchJSON = async (url: string, body: any) => {
+  const fetchJSON = async (url: string, body: Record<string, unknown>) => {
     const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -404,8 +403,6 @@ export default function Home() {
     setLoadingAction(null);
     setClickedWordIndex(null);
   };
-
-  const handleUndo = () => handleAction('undo');
 
   return (
     <div className="flex flex-col items-center justify-top min-h-screen p-4">

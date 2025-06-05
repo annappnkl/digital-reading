@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 """
 ${context}
 """
-Add 1–2 new sentences that match the story’s tone and characters. Include the word "${word}" in a natural, meaningful way.`
+Add 1–2 new sentences that match the storys tone and characters. Include the word "${word}" in a natural, meaningful way.`
     : `Insert a follow-up sentence to this story that feels natural and maintains flow:
 """
 ${context}

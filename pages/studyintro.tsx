@@ -17,7 +17,7 @@ export default function Start() {
   return (
     <div className="min-h-screen flex p-4">
       <div className="max-w-md text-left">
-        <h1 className="text-2xl font-bold mb-4">📖 Now let's read!</h1>
+        <h1 className="text-2xl font-bold mb-4">📖 Now let&apos;s read!</h1>
         <p className="mb-6 text-gray-700">
         You will now see 4 short stories, each takes approximately 3-4 minutes to read. After each story, you will be asked a few questions. This is not an exam, you do not need to remember everything you read.
         </p>

@@ -35,62 +35,62 @@ export default function PreSurvey() {
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
-  const handleSubmit = async () => {
-    const requiredFields = [
-      'age',
-      'gender',
-      'native_language',
-      'reading_language',
-      'english_proficiency',
-      'education',
-      'current_education',
-      'frequency',
-      'duration',
-      'understanding_method',
-      'success',
-      'bothered',
-      'reading_confidence',
-      'reading_satisfaction'
-    ];
-  
-    const missing = requiredFields.some(field => !formData[field as keyof typeof formData]);
-  
-    if (missing) {
-      alert('Please fill in all info before proceeding');
-      return;
-    }
-  
-    localStorage.setItem('preSurveyData', JSON.stringify(formData));
-    const session_id = localStorage.getItem('session_id');
-    const user_id = localStorage.getItem('user_id');
-    localStorage.setItem('native_language', formData.native_language);
-  
-    const payload = {
-      session_id,
-      user_id,
-      timestamp: new Date().toISOString(),
-      ...formData
-    };
-  
-    const { error } = await supabase.from('pre_survey').insert(payload);
-    if (error) {
-      console.error('Supabase insert error:', error);
-      return;
-    }
-  
-    // Map to CEFR and store
-    const levelMap: Record<string, string> = {
-      native: 'C2',
-      fluent: 'C1',
-      intermediate: 'B1',
-      basic: 'A1'
-    };
-    const level = levelMap[formData.english_proficiency] || 'B2';
-    localStorage.setItem('english_level', level);
-  
-    router.push('/studyintro');
+ const handleSubmit = async () => {
+  const requiredFields = [
+    'age',
+    'gender',
+    'native_language',
+    'reading_language',
+    'english_proficiency',
+    'education',
+    'current_education',
+    'frequency',
+    'duration',
+    'understanding_method',
+    'success',
+    'bothered',
+    'reading_confidence',
+    'reading_satisfaction'
+  ];
+
+  const missing = requiredFields.some(field => !formData[field as keyof typeof formData]);
+
+  if (missing) {
+    alert('Please fill in all info before proceeding');
+    return;
+  }
+
+  localStorage.setItem('preSurveyData', JSON.stringify(formData));
+  const session_id = localStorage.getItem('session_id');
+  const user_id = localStorage.getItem('user_id');
+  localStorage.setItem('native_language', formData.native_language);
+
+  const payload = {
+    session_id,
+    user_id,
+    timestamp: new Date().toISOString(),
+    ...formData
   };
-  
+
+  const { error } = await supabase.from('pre_survey').insert(payload);
+  if (error) {
+    console.error('Supabase insert error:', error);
+    return;
+  }
+
+  // Map to CEFR and store
+  const levelMap: Record<string, string> = {
+    native: 'C2',
+    fluent: 'C1',
+    intermediate: 'B1',
+    basic: 'A1'
+  };
+  const level = levelMap[formData.english_proficiency] || 'B2';
+  localStorage.setItem('english_level', level);
+
+  router.push('/studyintro');
+};
+
   
 
   return (
@@ -98,8 +98,8 @@ export default function PreSurvey() {
       {step === 1 && (
         <div>
           <h2 className="text-xl font-bold mb-2">Consent & Overview</h2>
-          <p className="mb-4">        This study explores how interactive digital reading tools can support comprehension when reading longer texts. You’ll be asked to read 4 short excerpts and interact with the text by clicking on words that you don't understand.
-          At the start and end, you’ll answer a few questions about your experience.</p>
+          <p className="mb-4">        This study explores how interactive digital reading tools can support comprehension when reading longer texts. You&apos;ll be asked to read 4 short excerpts and interact with the text by clicking on words that you don&apos;t understand.
+          At the start and end, you&apos;ll answer a few questions about your experience.</p>
           <label className="block mb-2">
             <input
               type="checkbox"
@@ -186,12 +186,12 @@ export default function PreSurvey() {
             >
               <option value="">Select</option>
               <option value="highschool">High School</option>
-              <option value="bachelor">Bachelor’s Degree</option>
-              <option value="master">Master’s Degree</option>
+              <option value="bachelor">Bachelor&apos;s Degree</option>
+              <option value="master">Master&apos;s Degree</option>
               <option value="doctorate">Doctorate or higher</option>
               <option value="other">Other</option>
             </select>
-            <label className="block p-2 mb-1 font-semibold">And what's your current Education or Occupation?</label>
+            <label className="block p-2 mb-1 font-semibold">And what&apos;s your current Education or Occupation?</label>
             <select
             name="current_education"
             value={formData.current_education}
@@ -200,8 +200,8 @@ export default function PreSurvey() {
             >
               <option value="">Select</option>
               <option value="highschool">High School</option>
-              <option value="bachelor">Bachelor’s Degree</option>
-              <option value="master">Master’s Degree</option>
+              <option value="bachelor">Bachelor&apos;s Degree</option>
+              <option value="master">Master&apos;s Degree</option>
               <option value="doctorate">Doctorate</option>
               <option value="working">Working</option>
               <option value="other">Other</option>
@@ -244,7 +244,7 @@ export default function PreSurvey() {
             <option value="google">I look on google</option>
             <option value="app">I use a dictionary app</option>
             <option value="book">I use an analog book dictionary</option>
-            <option value="function">I the "look up" or "define" function of the app I read on</option>
+            <option value="function">I the &quot;look up&quot; or &quot;define&quot; function of the app I read on</option>
             <option value="ask">I ask somebody</option>
             <option value="other">Other</option>
           </select>
@@ -259,7 +259,7 @@ export default function PreSurvey() {
             <option value="5">Excellent</option>
           </select>
 
-          <label className="block p-2 mb-1 font-semibold">If you said "not at all" or "somewhat", what do you think is the reason?</label>
+          <label className="block p-2 mb-1 font-semibold">If you said &quot;not at all&quot; or &quot;somewhat&quot;, what do you think is the reason?</label>
           <input name="fail_reason" 
           placeholder=""
           value={formData.fail_reason} 
@@ -267,7 +267,7 @@ export default function PreSurvey() {
           className="block mb-2 p-2 border rounded w-full">
           </input>
 
-          <label className="block p-2 mb-1 font-semibold">Does it bother you, when you don't understand something you read?</label>
+          <label className="block p-2 mb-1 font-semibold">Does it bother you, when you don&apos;t understand something you read?</label>
           <select name="bothered" value={formData.bothered} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
             <option value="">Select</option>
             <option value="1">Not at all</option>
@@ -316,16 +316,16 @@ export default function PreSurvey() {
           className="block mb-2 p-2 border rounded w-full"
         >
           <option value="">Select</option>
-          <option value="very_happy">Yes, I'm very happy</option>
-          <option value="somewhat_happy">Somewhat, but I’d like to read more</option>
-          <option value="neutral">I'm neutral about it</option>
+          <option value="very_happy">Yes, I&apos;m very happy</option>
+          <option value="somewhat_happy">Somewhat, but I&apos;d like to read more</option>
+          <option value="neutral">I&apos;m neutral about it</option>
           <option value="somewhat_unhappy">Not really, I wish I read more</option>
-          <option value="very_unhappy">No, I'm not happy with how little I read</option>
+          <option value="very_unhappy">No, I&apos;m not happy with how little I read</option>
         </select>
 
         {['somewhat_happy', 'somewhat_unhappy', 'very_unhappy', 'neutral'].includes(formData.reading_satisfaction) && (
           <>
-            <label className="block mb-2">If you wish you read more, why don’t you?</label>
+            <label className="block mb-2">If you wish you read more, why don&apos;t you?</label>
             <textarea
               name="reading_barriers"
               placeholder="e.g. no time, too tired, too many distractions..."

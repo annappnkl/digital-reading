@@ -165,7 +165,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
       </select>
 
-      <label className="block p-2 mb-1 font-semibold">Do you have any other comments about this method? Something that went well or did not go well?</label>
+      <label className="block p-2 mb-1 font-semibold">What went well what did not go well with this method?</label>
       <textarea name="notes" value={formData.notes} onChange={handleChange} className="block mb-4 p-2 border rounded w-full" rows={4}></textarea>
 
 

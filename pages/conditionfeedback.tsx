@@ -104,7 +104,7 @@ export default function ConditionFeedback() {
         </div>
         )}
     
-        <label className="block p-2 mb-1 font-semibold">I understood the text well.</label>
+        <label className="block p-2 mb-1 font-semibold">I was able to understand the words I didn’t know.</label>
         <select name="comprehension" value={formData.comprehension} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>
@@ -124,7 +124,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
         </select>
 
-        <label className="block p-2 mb-1 font-semibold">I felt comfortable while reading.</label>
+        <label className="block p-2 mb-1 font-semibold">I felt confident in my reading with this tool.</label>
         <select name="confidence" value={formData.confidence} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>

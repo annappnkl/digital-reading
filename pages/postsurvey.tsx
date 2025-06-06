@@ -47,7 +47,7 @@ export default function PostSurvey() {
       {step === 1 && (
         <>
           <h1 className="text-xl font-bold mb-4">🎉 One last set of questions coming up!</h1>
-          <p className="text-gray-700 mb-4">Then we're done. Click below to continue.</p>
+          <p className="text-gray-700 mb-4">Then we&apos;re done. Click below to continue.</p>
           <button
             onClick={() => setStep(2)}
             className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"

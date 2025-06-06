@@ -128,7 +128,7 @@ export default function PreSurvey() {
 
             <input
             name="native_language"
-            placeholder="Your native language"
+            placeholder="Your main native language"
             value={formData.native_language}
             onChange={handleChange}
             className="block p-2 mb-1 border rounded w-full"

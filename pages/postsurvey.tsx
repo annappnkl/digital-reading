@@ -67,7 +67,7 @@ export default function PostSurvey() {
             ))}
           </select>
 
-          <label className="block p-2 mb-1 font-semibold">Which method did you enjoy using the most?</label>
+          <label className="block p-2 mb-1 font-semibold">If you could choose one method to keep using while reading, which would it be?</label>
           <select name="ranking_enjoyable" value={formData.ranking_enjoyable} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
             <option value="">Select</option>
             {['Synonym/simplification replacement', 'Detailed explanation', 'Translation to my native language', 'Marking words & dictionary', 'None'].map(opt => (

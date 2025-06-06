@@ -104,7 +104,7 @@ export default function ConditionFeedback() {
         </div>
         )}
     
-        <label className="block p-2 mb-1 font-semibold">I was able to understand the words I didn’t know.</label>
+        <label className="block p-2 mb-1 font-semibold">With this method I was able to understand the words I didn’t know.</label>
         <select name="comprehension" value={formData.comprehension} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>
@@ -114,7 +114,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
         </select>
 
-        <label className="block p-2 mb-1 font-semibold">The story felt difficult to follow.</label>
+        <label className="block p-2 mb-1 font-semibold">This method distracted me from the story, it felt difficult to follow.</label>
         <select name="difficulty" value={formData.difficulty} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>
@@ -124,7 +124,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
         </select>
 
-        <label className="block p-2 mb-1 font-semibold">I felt confident in my reading with this tool.</label>
+        <label className="block p-2 mb-1 font-semibold">I felt confident while reading this story with this tool.</label>
         <select name="confidence" value={formData.confidence} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>
@@ -155,7 +155,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
       </select>
 
-      <label className="block p-2 mb-1 font-semibold">I felt uncomfortable while reading.</label>
+      <label className="block p-2 mb-1 font-semibold">I felt like I had to put in effort while reading.</label>
       <select name="stress" value={formData.stress} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>

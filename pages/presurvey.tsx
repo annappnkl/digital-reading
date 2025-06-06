@@ -162,10 +162,10 @@ export default function PreSurvey() {
                 className="block mb-2 p-2 border rounded w-full"
               >
                 <option value="">Select</option>
-                <option value="native">Dyslexia</option>
-                <option value="fluent">ADHD</option>
-                <option value="intermediate">Other</option>
-                <option value="basic">No, nothing</option>
+                <option value="dyslexic">Dyslexia</option>
+                <option value="adhd">ADHD</option>
+                <option value="other">Other</option>
+                <option value="nothing">No, nothing</option>
               </select>
 
             <label className="block p-2 mb-1 font-semibold">What is your most recent fulfilled Education Level?</label>

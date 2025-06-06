@@ -59,7 +59,7 @@ export default function PostSurvey() {
 
       {step === 2 && (
         <>
-          <h1 className="text-xl font-bold mb-4">✨ Yay you did it! These are the last questions!</h1>
+          <h1 className="text-xl font-bold mb-4">✨ These are the last questions!</h1>
 
           <label className="block mt-4 p-2 mb-1 font-semibold">Which method was the most helpful?</label>
           <select name="ranking_helpful" value={formData.ranking_helpful} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
@@ -101,7 +101,7 @@ export default function PostSurvey() {
             ))}
           </select>
 
-          <label className="block p-2 mb-1 font-semibold">Any final thoughts or suggestions? For example for changes?</label>
+          <label className="block p-2 mb-1 font-semibold">Any final thoughts or suggestions? For example for changes? Would you use such tools for your reading?</label>
           <textarea name="notes" value={formData.notes} onChange={handleChange} className="block mb-4 p-2 border rounded w-full" rows={4}></textarea>
 
           <div className="flex justify-end">

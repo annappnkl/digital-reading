@@ -288,7 +288,7 @@ export default function Home() {
       }
   
       //updateWord(clicked_word_index, replacement);
-      setSimplifiedLabels(prev => ({ ...prev, [clicked_word_index]: replacement }));
+      setSimplifiedLabels(prev => ({ ...prev, [clicked_word_index]: replacement as string}));
       result_summary = 'Replaced successfully';
     }
   

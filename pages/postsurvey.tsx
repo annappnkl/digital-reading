@@ -12,6 +12,7 @@ export default function PostSurvey() {
     ranking_not_enjoyable: '',
     ranking_disruptive: '',
     ranking_effort: '',
+    future_outlook: '',
     per_condition_helpfulness: {
       synonym: '',
       explanation: '',
@@ -95,6 +96,14 @@ export default function PostSurvey() {
           <select name="ranking_effort" value={formData.ranking_effort} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
             <option value="">Select</option>
             {['Synonym/simpler word replacement', 'The detailed explanation text', 'Translation to my language', 'Marking words & looking at dictionary', 'None'].map(opt => (
+              <option key={opt} value={opt}>{opt.replace('_', ' ')}</option>
+            ))}
+          </select>
+
+          <label className="block p-2 mb-1 font-semibold">If this worked perfectly, with the explanation/translation/synonym always being 100% correct, which method would you use?</label>
+          <select name="future_outlook" value={formData.future_outlook} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
+            <option value="">Select</option>
+            {['Synonym/simpler word replacement', 'The detailed explanation text', 'Translation to my language', 'All of them', 'None'].map(opt => (
               <option key={opt} value={opt}>{opt.replace('_', ' ')}</option>
             ))}
           </select>

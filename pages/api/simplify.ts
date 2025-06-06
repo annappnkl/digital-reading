@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { word, sentence } = req.body;
 
   const prompt = `Simplify the word "${word}" in the sentence: \"${sentence}\". 
-Return only a simpler synonym that fits in place. If it is already simple or inappropriate to replace, return "${word}".`;
+  Return only a simpler synonym that fits in place of the word or up to three words combined that very simply explain the word. Never return the same word.`;
 
   try {
     const result = await getChatCompletion(prompt);

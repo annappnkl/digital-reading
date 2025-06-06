@@ -51,7 +51,7 @@ export default function ConditionFeedback() {
   };
 
   const handleSubmit = async () => {
-    
+
     const session_id = localStorage.getItem('session_id');
     const user_id = localStorage.getItem('user_id');
   
@@ -88,7 +88,7 @@ export default function ConditionFeedback() {
     <div className="p-4 max-w-md mx-auto">
       {questions.length > 0 && (
         <div className="mt-6">
-            <h3 className="font-semibold mb-2">Quick questions about what you just read:</h3>
+            <h3 className="font-semibold mb-2">Quick questions about what you just read, answer as best as you can:</h3>
             {questions.map((q, i) => (
             <div key={i} className="mb-4">
                 <p className="mb-1 text-gray-800">{q.question}</p>
@@ -123,7 +123,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
         </select>
 
-        <label className="block p-2 mb-1 font-semibold">I felt confident while reading.</label>
+        <label className="block p-2 mb-1 font-semibold">I felt comfortable while reading.</label>
         <select name="confidence" value={formData.confidence} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>
@@ -133,7 +133,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
         </select>
 
-        <label className="block p-2 mb-1 font-semibold">If it wasn&apos;t for the method, I would not have understood the text.</label>
+        <label className="block p-2 mb-1 font-semibold">The method helped me understand the text better.</label>
         <select name="usefulness" value={formData.usefulness} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>
@@ -144,7 +144,7 @@ export default function ConditionFeedback() {
         </select>
 
 
-      <label className="block p-2 mb-1 font-semibold">This method felt helpful</label>
+      <label className="block p-2 mb-1 font-semibold">This method felt helpful.</label>
       <select name="helpfulness" value={formData.helpfulness} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>
@@ -154,7 +154,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
       </select>
 
-      <label className="block p-2 mb-1 font-semibold">I felt stressed while reading</label>
+      <label className="block p-2 mb-1 font-semibold">I felt uncomfortable while reading.</label>
       <select name="stress" value={formData.stress} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>

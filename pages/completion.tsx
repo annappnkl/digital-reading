@@ -1,9 +1,7 @@
 // pages/Completion.tsx
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 
 export default function Complete() {
-  const router = useRouter();
 
   useEffect(() => {
     localStorage.clear(); // Clear all study-related data

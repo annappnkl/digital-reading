@@ -75,8 +75,9 @@ export default function PreSurvey() {
       {step === 1 && (
         <div>
           <h2 className="text-xl font-bold mb-2">Consent & Overview</h2>
-          <p className="mb-4">        This study explores how interactive digital reading tools can support comprehension when reading longer texts. You&apos;ll be asked to read 4 short excerpts and interact with the text by clicking on words that you don&apos;t understand.
+          <p className="mb-4">This study explores how interactive digital reading tools can support comprehension when reading longer texts. You&apos;ll be asked to read 4 short excerpts and interact with the text by clicking on words that you don&apos;t understand.
           At the start and end, you&apos;ll answer a few questions about your experience.</p>
+          <p className="mb-4">If you are coming from SurveySwap stick around to the end to collect your Karma</p>
           <label className="block mb-2">
             <input
               type="checkbox"

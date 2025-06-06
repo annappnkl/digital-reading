@@ -24,6 +24,7 @@ export default function PreSurvey() {
     reading_satisfaction: '',
     reading_barriers: '',
     bother_reason: '',
+    impairment: '',
   });
   const [consentGiven, setConsentGiven] = useState(false);
 
@@ -151,6 +152,20 @@ export default function PreSurvey() {
                 <option value="fluent">Fluent (C1)</option>
                 <option value="intermediate">Intermediate (B1, B2)</option>
                 <option value="basic">Basic (A1, A2)</option>
+              </select>
+
+              <label className="block p-2 mb-1 font-semibold">Do you have any predispositions such as dyslexia?</label>
+              <select
+                name="impairment"
+                value={formData.impairment}
+                onChange={handleChange}
+                className="block mb-2 p-2 border rounded w-full"
+              >
+                <option value="">Select</option>
+                <option value="native">Dyslexia</option>
+                <option value="fluent">ADHD</option>
+                <option value="intermediate">Other</option>
+                <option value="basic">No, nothing</option>
               </select>
 
             <label className="block p-2 mb-1 font-semibold">What is your most recent fulfilled Education Level?</label>

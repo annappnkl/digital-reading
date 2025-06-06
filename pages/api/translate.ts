@@ -25,13 +25,13 @@ async function getChatCompletion(prompt: string, temperature = 0.3): Promise<str
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { word, target_language } = req.body;
+  const { word, sentence, target_language } = req.body;
 
   if (!word || !target_language) {
     return res.status(400).json({ error: 'Missing word or target language' });
   }
 
-  const prompt = `Translate the English word "${word}" into ${target_language}. 
+  const prompt = `Translate the English word "${word}" in the sentence: "${sentence}" into ${target_language}. 
 Use a clear, simple, and common translation. Only return the translated word.`;
 
   try {

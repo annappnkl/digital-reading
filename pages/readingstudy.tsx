@@ -294,7 +294,7 @@ export default function Home() {
   
     if (action === 'translation') {
         const nativeLang = localStorage.getItem('native_language') || 'your language';
-        const translateRes = await fetchJSON('/api/translate', { word, target_language: nativeLang });
+        const translateRes = await fetchJSON('/api/translate', { word, sentence, target_language: nativeLang });
         const translated = translateRes.translated;
         setTranslatedLabels(prev => ({ ...prev, [clicked_word_index]: translated }));
 

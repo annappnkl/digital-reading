@@ -18,8 +18,6 @@ export default function PostSurvey() {
       translation: '',
       click_only: ''
     },
-    comprehension: '',
-    stress: '',
     notes: ''
   });
 

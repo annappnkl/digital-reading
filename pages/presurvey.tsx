@@ -35,29 +35,6 @@ export default function PreSurvey() {
   const nextStep = () => setStep(step + 1);
 
  const handleSubmit = async () => {
-  const requiredFields = [
-    'age',
-    'gender',
-    'native_language',
-    'reading_language',
-    'english_proficiency',
-    'education',
-    'current_education',
-    'frequency',
-    'duration',
-    'understanding_method',
-    'success',
-    'bothered',
-    'reading_confidence',
-    'reading_satisfaction'
-  ];
-
-  const missing = requiredFields.some(field => !formData[field as keyof typeof formData]);
-
-  if (missing) {
-    alert('Please fill in all info before proceeding');
-    return;
-  }
 
   localStorage.setItem('preSurveyData', JSON.stringify(formData));
   const session_id = localStorage.getItem('session_id');

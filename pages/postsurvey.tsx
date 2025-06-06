@@ -62,7 +62,7 @@ export default function PostSurvey() {
           <label className="block mt-4 p-2 mb-1 font-semibold">Which method was the most helpful?</label>
           <select name="ranking_helpful" value={formData.ranking_helpful} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
             <option value="">Select</option>
-            {['Synonym/simplification replacement', 'Detailed explanation', 'Translation to my native language', 'Marking words & dictionary', 'None'].map(opt => (
+            {['Synonym/simpler word replacement', 'The detailed explanation text', 'Translation to my language', 'Marking words & looking at dictionary', 'None'].map(opt => (
               <option key={opt} value={opt}>{opt.replace('_', ' ')}</option>
             ))}
           </select>
@@ -70,7 +70,7 @@ export default function PostSurvey() {
           <label className="block p-2 mb-1 font-semibold">If you could choose one method to keep using while reading, which would it be?</label>
           <select name="ranking_enjoyable" value={formData.ranking_enjoyable} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
             <option value="">Select</option>
-            {['Synonym/simplification replacement', 'Detailed explanation', 'Translation to my native language', 'Marking words & dictionary', 'None'].map(opt => (
+            {['Synonym/simpler word replacement', 'The detailed explanation text', 'Translation to my language', 'Marking words & looking at dictionary', 'None'].map(opt => (
               <option key={opt} value={opt}>{opt.replace('_', ' ')}</option>
             ))}
           </select>
@@ -78,7 +78,7 @@ export default function PostSurvey() {
           <label className="block p-2 mb-1 font-semibold">Which method did you enjoy using the least?</label>
           <select name="ranking_not_enjoyable" value={formData.ranking_not_enjoyable} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
             <option value="">Select</option>
-            {['Synonym/simplification replacement', 'Detailed explanation', 'Translation to my native language', 'Marking words & dictionary', 'None'].map(opt => (
+            {['Synonym/simpler word replacement', 'The detailed explanation text', 'Translation to my language', 'Marking words & looking at dictionary', 'None'].map(opt => (
               <option key={opt} value={opt}>{opt.replace('_', ' ')}</option>
             ))}
           </select>
@@ -86,7 +86,7 @@ export default function PostSurvey() {
           <label className="block p-2 mb-1 font-semibold">Which method distracted you most from reading?</label>
           <select name="ranking_disruptive" value={formData.ranking_disruptive} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
             <option value="">Select</option>
-            {['Synonym/simplification replacement', 'Detailed explanation', 'Translation to my native language', 'Marking words & dictionary', 'None'].map(opt => (
+            {['Synonym/simpler word replacement', 'The detailed explanation text', 'Translation to my language', 'Marking words & looking at dictionary', 'None'].map(opt => (
               <option key={opt} value={opt}>{opt.replace('_', ' ')}</option>
             ))}
           </select>
@@ -94,7 +94,7 @@ export default function PostSurvey() {
           <label className="block p-2 mb-1 font-semibold">Which method required the most effort?</label>
           <select name="ranking_effort" value={formData.ranking_effort} onChange={handleChange} className="block mb-2 p-2 border rounded w-full">
             <option value="">Select</option>
-            {['Synonym/simplification replacement', 'Detailed explanation', 'Translation to my native language', 'Marking words & dictionary', 'None'].map(opt => (
+            {['Synonym/simpler word replacement', 'The detailed explanation text', 'Translation to my language', 'Marking words & looking at dictionary', 'None'].map(opt => (
               <option key={opt} value={opt}>{opt.replace('_', ' ')}</option>
             ))}
           </select>

@@ -17,12 +17,11 @@ export default function Start() {
   return (
     <div className="min-h-screen flex p-4">
       <div className="max-w-md text-left">
-        <h1 className="text-2xl font-bold mb-4">📖 Now let&apos;s read!</h1>
+        <h1 className="text-2xl font-bold mb-4">📖 Now let&apos;s read! You can click on any word in these texts! In each story, clicking a word tirggers a different interaction!</h1>
         <p className="mb-6 text-gray-700">
-        You will now see 4 short stories, each takes approximately 3-4 minutes to read. After each story, you will be asked a few questions. This is not an exam, you do not need to remember everything you read.
+        Each story takes approximately 3-4 minutes to read. After each story, you will be asked questions.
         </p>
         <p className="mb-6 text-gray-700">
-        For each short story, you will be given a different interactive method to help you understand words within the text better.
         Before you start reading a story, the method will be explained to you. Read the instruction and start reading.
         </p>
         <button

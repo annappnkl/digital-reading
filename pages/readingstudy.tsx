@@ -32,6 +32,8 @@ export default function Home() {
   
   const [showInstructions, setShowInstructions] = useState(true);
   const [translatedLabels, setTranslatedLabels] = useState<{ [index: number]: string }>({});
+  const [simplifiedLabels, setSimplifiedLabels] = useState<{ [index: number]: string }>({});
+
 
   useEffect(() => {
     const story = getTextForCEFRLevel(currentStep);
@@ -89,10 +91,10 @@ export default function Home() {
   
   if (showInstructions) {
     const instructionText: Record<string, string> = {
-      synonym: "If you do not understand a word -- click it -- it will be replaced with a simpler synonym or expression.",
-      explanation: "If you do not understand a word -- click it -- it will be explained to you.",
-      translation: "If you do not understand a word -- click it -- it will be translated to your native language.",
-      click_only: "If you do not understand a word -- click it -- it will be highlighted, if you want to, you can use a dictionary on a separate tab.",
+      synonym: "This method will replace a word with a simpler word or expression.",
+      explanation: "This method will explain a word to you in simple english.",
+      translation: "This method will translate a word to your native language.",
+      click_only: "This method, will highlight a word you click. If you want to you can then look it up in a dictionary on a new tab.",
     };
   
     return (
@@ -285,7 +287,8 @@ export default function Home() {
         return;
       }
   
-      updateWord(clicked_word_index, replacement);
+      //updateWord(clicked_word_index, replacement);
+      setSimplifiedLabels(prev => ({ ...prev, [clicked_word_index]: replacement }));
       result_summary = 'Replaced successfully';
     }
   
@@ -435,6 +438,11 @@ export default function Home() {
               onClick={() => handleWordClick(i, word)}
               ref={el => void (wordRefs.current[i] = el)}
             >
+              {simplifiedLabels[i] && (
+                <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 text-xs text-purple-800 whitespace-nowrap italic">
+                  {simplifiedLabels[i]}
+                </span>
+              )}
               {/* 🟦 Show translation as blue label if it exists */}
               {translatedLabels[i] && (
                 <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 text-xs text-blue-600 whitespace-nowrap">

@@ -185,7 +185,7 @@ export default function Home() {
       const classifyRes = await fetchJSON('/api/classify', { word, sentence });
       label = classifyRes.label;
     } else {
-      label = 'n/a'; // Skip classification for translation
+      label = 'n/a'; // For translation, we don't classify, just use a placeholder
     }
     
     
@@ -297,7 +297,7 @@ export default function Home() {
         const translateRes = await fetchJSON('/api/translate', { word, sentence, target_language: nativeLang });
         const translated = translateRes.translated;
         setTranslatedLabels(prev => ({ ...prev, [clicked_word_index]: translated }));
-
+        result_summary = "Translated successfully";
     }
     if (action === 'explanation' || action === 'explain_after_replace') {
       const defineRes = await fetchJSON('/api/define', { word });

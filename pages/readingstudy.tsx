@@ -94,7 +94,7 @@ export default function Home() {
       synonym: "This method will replace a word with a simpler word or expression.",
       explanation: "This method will explain a word to you in simple english.",
       translation: "This method will translate a word to your native language.",
-      click_only: "This method, will highlight a word you click. If you want to you can then look it up in a dictionary on a new tab.",
+      click_only: "Just read the following text. If you want to highligh a word, click it, but nothing else will happen.",
     };
   
     return (

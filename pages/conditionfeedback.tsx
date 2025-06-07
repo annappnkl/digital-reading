@@ -15,6 +15,8 @@ export default function ConditionFeedback() {
     confidence: '',
     usefulness: '',
     notes: '',
+    distraction: '',
+    future_use: ''
   });
 
     const [questions, setQuestions] = useState<{ question: string, answer: string }[]>([]);
@@ -104,7 +106,7 @@ export default function ConditionFeedback() {
         </div>
         )}
     
-        <label className="block p-2 mb-1 font-semibold">With this method I was able to understand the words I didn’t know.</label>
+        <label className="block p-2 mb-1 font-semibold">I am confident I understood this text very well and could tell you what it was about right now.</label>
         <select name="comprehension" value={formData.comprehension} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>
@@ -114,17 +116,7 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
         </select>
 
-        <label className="block p-2 mb-1 font-semibold">This method distracted me from the story, it felt difficult to follow.</label>
-        <select name="difficulty" value={formData.difficulty} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
-        <option value="">Select</option>
-        <option value="1">Completely agree</option>
-        <option value="2">Somewhat agree</option>
-        <option value="3">Neutral</option>
-        <option value="4">Somewhat disagree</option>
-        <option value="5">Completely disagree</option>
-        </select>
-
-        <label className="block p-2 mb-1 font-semibold">I felt confident while reading this story with this tool.</label>
+        <label className="block p-2 mb-1 font-semibold">I felt confident while reading this text.</label>
         <select name="confidence" value={formData.confidence} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
         <option value="">Select</option>
         <option value="1">Completely agree</option>
@@ -133,6 +125,19 @@ export default function ConditionFeedback() {
         <option value="4">Somewhat disagree</option>
         <option value="5">Completely disagree</option>
         </select>
+
+        <label className="block p-2 mb-1 font-semibold">I felt like I had to put in effort while reading.</label>
+        <select name="stress" value={formData.stress} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
+            <option value="">Select</option>
+            <option value="1">Completely agree</option>
+            <option value="2">Somewhat agree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat disagree</option>
+            <option value="5">Completely disagree</option>
+        </select>
+
+        {intervention !== 'click_only' && (
+        <>
 
         <label className="block p-2 mb-1 font-semibold">The method helped me understand the text better.</label>
         <select name="usefulness" value={formData.usefulness} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
@@ -144,30 +149,51 @@ export default function ConditionFeedback() {
         <option value="5">Completely disagree</option>
         </select>
 
+        <label className="block p-2 mb-1 font-semibold">I was distracted by the method.</label>
+            <select name="distraction" value={formData.distraction} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
+            <option value="">Select</option>
+            <option value="1">Completely agree</option>
+            <option value="2">Somewhat agree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat disagree</option>
+            <option value="5">Completely disagree</option>
+        </select>
 
-      <label className="block p-2 mb-1 font-semibold">This method felt helpful.</label>
-      <select name="helpfulness" value={formData.helpfulness} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
-        <option value="">Select</option>
-        <option value="1">Completely agree</option>
-        <option value="2">Somewhat agree</option>
-        <option value="3">Neutral</option>
-        <option value="4">Somewhat disagree</option>
-        <option value="5">Completely disagree</option>
-      </select>
+        <label className="block p-2 mb-1 font-semibold">It was difficult to use this method.</label>
+            <select name="difficulty" value={formData.difficulty} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
+            <option value="">Select</option>
+            <option value="1">Completely agree</option>
+            <option value="2">Somewhat agree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat disagree</option>
+            <option value="5">Completely disagree</option>
+        </select>
 
-      <label className="block p-2 mb-1 font-semibold">I felt like I had to put in effort while reading.</label>
-      <select name="stress" value={formData.stress} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
-        <option value="">Select</option>
-        <option value="1">Completely agree</option>
-        <option value="2">Somewhat agree</option>
-        <option value="3">Neutral</option>
-        <option value="4">Somewhat disagree</option>
-        <option value="5">Completely disagree</option>
-      </select>
+        <label className="block p-2 mb-1 font-semibold">This method felt helpful.</label>
+        <select name="helpfulness" value={formData.helpfulness} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
+            <option value="">Select</option>
+            <option value="1">Completely agree</option>
+            <option value="2">Somewhat agree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat disagree</option>
+            <option value="5">Completely disagree</option>
+        </select>
 
-      <label className="block p-2 mb-1 font-semibold">What went well what did not go well with this method?</label>
-      <textarea name="notes" value={formData.notes} onChange={handleChange} className="block mb-4 p-2 border rounded w-full" rows={4}></textarea>
+        <label className="block p-2 mb-1 font-semibold">If it worked completely seemlessly, I would use this method if I had it available in my reading device.</label>
+        <select name="future_use" value={formData.future_use} onChange={handleChange} className="block mb-4 p-2 border rounded w-full">
+            <option value="">Select</option>
+            <option value="1">Completely agree</option>
+            <option value="2">Somewhat agree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat disagree</option>
+            <option value="5">Completely disagree</option>
+        </select>
 
+        <label className="block p-2 mb-1 font-semibold">What went well and what did not go well with this method?</label>
+        <textarea name="notes" value={formData.notes} onChange={handleChange} className="block mb-4 p-2 border rounded w-full" rows={4}></textarea>
+
+        </> 
+        )}
 
       <div className="flex justify-end">
         <button onClick={handleSubmit} className="px-4 py-2 bg-green-600 text-white rounded">

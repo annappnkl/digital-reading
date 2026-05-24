@@ -6,7 +6,7 @@ This project is a research-driven web app that explores if users understand long
 <br>
 <img width="900" height="650" alt="681b75bd8fde73bdb6070d90_airreadersc4" src="https://github.com/user-attachments/assets/283128c4-752f-41f6-9e57-962d688c8e76" />
 <br>
-<img width="800" height="800" alt="681b7623de2432189d46ff6a_screenshot_ai_reading3" src="https://github.com/user-attachments/assets/378a7fa2-5bf3-4b70-b8c0-b0ca1eed26be" />
+<img width="600" height="600" alt="681b7623de2432189d46ff6a_screenshot_ai_reading3" src="https://github.com/user-attachments/assets/378a7fa2-5bf3-4b70-b8c0-b0ca1eed26be" />
 
 ## ✨ Features
 

@@ -2,6 +2,9 @@
 
 This project is a research-driven web app that explores if users understand long-form text better through interactive AI support. It allows readers to click on individual words for simplified synonyms, sentence-level explanations (future: and visual aids), making comprehension easier and more engaging. The prototype uses OpenAIs GPT 4 (3.5 fallback).
 
+https://cdn.prod.website-files.com/68092f476dbf7be5157b5b02/681b75bd8fde73bdb6070d90_airreadersc4.png
+
+
 ## ✨ Features
 
 ### 🔍 Word-level interactions
@@ -51,12 +54,6 @@ Surveys are adapted from:
 - NASA-TLX (cognitive workload)
 - ReadTheory-style skill calibration
 - Collected data includes comprehension scores, cognitive load, and feedback on the tool.
-
-## ✅ Progress Status
-
-- Initial Prototype complete
-- Preparations of pre and post survey are in progress
-- Peparations of initial reading skill calibration are in progress
 
 ## Other
 

@@ -2,9 +2,9 @@
 
 This project is a research-driven web app that explores if users understand long-form text better through interactive AI support. It allows readers to click on individual words for simplified synonyms, sentence-level explanations (future: and visual aids), making comprehension easier and more engaging. The prototype uses OpenAIs GPT 4 (3.5 fallback).
 
-<img width="900" height="650" alt="681b75b0e7ff03dfee2b3b10_screenshot_air_reader1" src="https://github.com/user-attachments/assets/3c7a990a-71a3-4298-8dc1-13dd5b5ee116" />
-<br>
 <img width="900" height="650" alt="681b75bd8fde73bdb6070d90_airreadersc4" src="https://github.com/user-attachments/assets/283128c4-752f-41f6-9e57-962d688c8e76" />
+<br>
+<img width="900" height="650" alt="681b75b0e7ff03dfee2b3b10_screenshot_air_reader1" src="https://github.com/user-attachments/assets/3c7a990a-71a3-4298-8dc1-13dd5b5ee116" />
 <br>
 <img width="600" height="600" alt="681b7623de2432189d46ff6a_screenshot_ai_reading3" src="https://github.com/user-attachments/assets/378a7fa2-5bf3-4b70-b8c0-b0ca1eed26be" />
 
